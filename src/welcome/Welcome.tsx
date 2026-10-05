@@ -26,6 +26,15 @@ export default function Welcome() {
             OVO / GoPay 081328343908
           </strong>
         </span>
+
+        <a
+          href="https://www.tiktok.com/@putranur99?_r=1&_t=ZS-9AI4Qi3gauL"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-slate-700 transition hover:text-slate-950 hover:underline"
+        >
+          TikTok: @putranur99
+        </a>
       </div>
     </div>
   );
