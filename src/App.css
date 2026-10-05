@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: white;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background: white;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.print-button {
+  display: block;
+  padding: 12px 25px;
+  background: red;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background: #b00000;
+}
+
+.paper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+}
+
+h1 {
+  margin: 0 0 15px;
+  text-align: center;
+  color: #000;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  border: 1.5px solid #000;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  height: 25px;
+  padding: 2px;
+  font-size: 10px;
+}
+
+th {
+  font-weight: 900;
+}
+
+.no {
+  width: 35px;
+}
+
+.name-header,
+.name {
+  width: 130px;
+}
+
+.name {
+  text-align: left;
+  padding-left: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.month-header,
+.month-cell {
+  width: 42px;
+}
+
+/* =========================
+   PRINT A4 PORTRAIT
+   ========================= */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 4mm;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .page {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .paper {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0 0 4px;
+    text-align: center;
+    color: #000 !important;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h1 span {
+    font-weight: 400;
+  }
+
+  h1 strong {
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  th,
+  td {
+    height: 20px;
+    padding: 0;
+    border: 1.1px solid #000;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 7px;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  th {
+    height: 18px;
+    font-weight: 900;
+  }
+
+  .no {
+    width: 24px;
+  }
+
+  .name-header,
+  .name {
+    width: 98px;
+  }
+
+  .name {
+    text-align: left;
+    padding-left: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .month-header,
+  .month-cell {
+    width: 38px;
+  }
+}
